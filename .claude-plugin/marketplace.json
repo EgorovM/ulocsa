@@ -1,0 +1,14 @@
+{
+  "name": "ulocsa",
+  "description": "Localize web and mobile apps into Sakha (Yakut)",
+  "owner": {
+    "name": "EgorovM"
+  },
+  "plugins": [
+    {
+      "name": "ulocsa",
+      "source": "./plugins/ulocsa",
+      "description": "Find strings, set up i18n, add a language switcher, translate into Sakha (free with your model, or through the ulocsa API), check and screenshot the result"
+    }
+  ]
+}

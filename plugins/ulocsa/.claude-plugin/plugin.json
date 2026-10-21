@@ -1,0 +1,12 @@
+{
+  "name": "ulocsa",
+  "version": "0.1.0",
+  "description": "Localize web and mobile apps into Sakha (Yakut): strings, i18n, language switcher, translation, automatic checks, screenshot fit check",
+  "author": {
+    "name": "EgorovM"
+  },
+  "homepage": "https://ulocsa.michill.ru",
+  "repository": "https://github.com/EgorovM/ulocsa",
+  "license": "MIT",
+  "keywords": ["sakha", "yakut", "sah", "i18n", "localization", "саха тыла"]
+}
