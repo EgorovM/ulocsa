@@ -234,6 +234,14 @@ export function check(src, dst, { maxChars = 0, role = '', keep = [] } = {}) {
   if (ls >= 24 && ld * 2 < ls) add('too_short', 'error', `${ld} chars vs ${ls} in the source: something was left out`);
   if (maxChars > 0 && ld > maxChars) add('too_long', 'error', `${ld} chars, limit ${maxChars}`);
   else if (role === 'button' && ld > Math.floor(ls * 3 / 2) + 3) add('long', 'warn', `${ld} chars vs ${ls} in the source`);
+  // A button, or any short Russian command («Войти», «Перейти в кабинет»), is a verb in Sakha
+  // too: «Кэбиниэккэ киир», «Ыытыҥ», never a verbal noun («Кэбиниэккэ барыы», «Көрдөөһүн»).
+  const srcWords = visible(src).match(/[\p{L}\p{N}'’]+/gu) || [];
+  const isAction = srcWords.length > 0 && srcWords.length <= 6 && /^\p{L}+(?:ть|ться|ти|тись)$/u.test(srcWords[0].toLowerCase());
+  if (role === 'button' || isAction) {
+    const last = (visible(dst).match(/[\p{L}\p{N}'’]+/gu) || []).filter(w => /\p{Script=Cyrillic}/u.test(w)).pop();
+    if (last && /(?:ыы|ии|уу|үү|һын|һин|һун|һүн)$/u.test(last.toLowerCase())) add('button_noun', 'error', `"${last}" is a noun: a button or an action is a verb in the imperative (Киириҥ, Ыытыҥ, Кэбиниэккэ киир)`);
+  }
   const lead = x => x.match(/^[  ]*/)[0], trail = x => x.match(/[  ]*$/)[0];
   if (lead(src) !== lead(dst) || trail(src) !== trail(dst)) add('edge_space', 'warn', 'leading/trailing spaces differ (the string may be glued in code)');
   const last = x => x.trimEnd().slice(-1);

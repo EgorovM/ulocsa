@@ -198,6 +198,18 @@ Tell the user:
   philologists to test the UI (Telegram @loalkota). In API mode, `ulocsa review-sheet`
   exports a sheet for them.
 
+## Frontend rules
+
+* **Buttons are verbs.** Every button and action link is a verb in the imperative, in
+  Russian and in Sakha: «Перейти в кабинет» → «Кэбиниэккэ киир», never «Кэбиниэккэ
+  барыы». A noun on a button («Вход», «Корзина») becomes a verb («Войти», «Открыть
+  корзину») in the source first. Give such keys `role: button` in `.ulocsa/meta.json`.
+  `check.mjs` reports violations as `button_noun`.
+* Navigation items and headings may stay nouns: «Регистрация» → «Бэлиэтэнии» in the menu,
+  «Зарегистрироваться» → «Бэлиэтэниҥ» on the button. If the same text is a menu item in one
+  place and a button in another, give it two keys.
+* Label the language switcher options in their own language: «Саха тыла», «Русский».
+
 ## Rules
 
 * Never send source code, secrets or personal data anywhere. The API gets strings, their

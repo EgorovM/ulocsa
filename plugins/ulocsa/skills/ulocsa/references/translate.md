@@ -48,7 +48,8 @@ Re-run until there are no errors.
 
 Read the Sakha file top to bottom as one text and fix:
 * the same idea translated two ways (the glossary wins);
-* the register drifting (эһиги vs эн) or buttons that are nouns instead of imperatives;
+* the register drifting (эһиги vs эн);
+* buttons and short commands that are nouns instead of imperatives («…барыы» → «…киир»);
 * calques of Russian word order, and Russian words where a common Sakha one exists;
 * meaning lost against the `desc`;
 * text over `max_chars`.

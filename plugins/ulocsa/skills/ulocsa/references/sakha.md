@@ -44,7 +44,13 @@ Each product picks one register and keeps it everywhere:
   imperative takes `-ыҥ/-иҥ/-уҥ/-үҥ`: *Кэтэһиҥ*, *Киириҥ*, *Устуҥ*, *Ыытыҥ*.
 * **Familiar «эн»** (games, youth): the bare stem: *Кэтэс*, *Киир*.
 
-Buttons are verbs in that imperative, not nouns: *Сабыҥ*, not *Сабыы*. Keep it uniform.
+**Buttons are verbs.** A button, or any short command (the Russian starts with an
+infinitive: «Войти», «Перейти в кабинет», «Отправить код»), is an action. Its Sakha text
+is a verb in the imperative: *Кэбиниэккэ киир*, *Ыытыҥ*, *Сабыҥ*. It is never a verbal
+noun ending in -ыы/-ии/-уу/-үү or -һын: not *Кэбиниэккэ барыы*, *Ыытыы*, *Сабыы*,
+*Көрдөөһүн*. This holds even when the Russian button is a noun («Вход», «Поиск»).
+Headings, menu sections and labels may stay nouns («Регистрация» → *Бэлиэтэнии*).
+`check.mjs` flags violations as `button_noun`. Keep the form uniform across the product.
 
 ## Terminology
 
@@ -70,7 +76,7 @@ Common UI terms in use (these are suggestions; a project glossary overrides them
 | цена | сыана |
 | поиск | көрдөөһүн |
 | объявление | биллэрии |
-| регистрация | бэлиэтэнии |
+| регистрация | бэлиэтэнии (кнопка: бэлиэтэниҥ) |
 | Якутск | Дьокуускай |
 
 ## Punctuation and formatting
